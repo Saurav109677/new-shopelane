@@ -360,3 +360,11 @@ footer h4 {
 .MuiFormHelperText-root{
   color: red !important;
 }
+
+.loading {
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
