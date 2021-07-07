@@ -4,8 +4,10 @@ import Footer from '../Footer';
 
 const OrderConform = () => {
     const [home, setHome] = useState(false)
+    
     return ( <>
     {home && <Redirect to="/" />}
+   
     <div style={{marginTop: "100px"}} className="order-Conform">
          <Link to="order" style={{textDecoration: "none"}}>
          <img style={{height: "300px"}} src="https://shoplane.netlify.app/img/img_confirm.png" />

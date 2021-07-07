@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import { Grid, Paper, Avatar, Button, Typography } from '@material-ui/core';
 import { LockOpenOutlined } from '@material-ui/icons';
 import TextField from '@material-ui/core/TextField';
@@ -11,7 +10,7 @@ import * as Yup from 'yup';
 import { FormHelperText } from '@material-ui/core';
 
 const SignIn = ({handleChange}) => {
-    const [home, setHome] = useState(false)
+    
     const paperStyle = { padding: 20, height: "73vh", width: 300, margin: "0 auto" }
     const avatarStyle = { backgroundColor: "#1bbd7e" }
     const btnStyle = { margin: '8px 0' }
@@ -34,7 +33,7 @@ const SignIn = ({handleChange}) => {
     }
 
     return (<>
-        {home && <Redirect to="/" />}
+        
         <Grid>
             <Paper style={paperStyle}>
                 <Grid align='center'>

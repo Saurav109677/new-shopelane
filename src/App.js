@@ -6,6 +6,7 @@ import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import OrderConform from './components/Order';
 import SignInOutContainer from './TabsContainers';
+import PageNotFound from './components/PageNotFound';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/cart" component={Cart} />
       <Route path="/container" component={SignInOutContainer} />
       <Route path="/order" component={OrderConform} />
+      <Route component={PageNotFound} />
     </Switch>
     </BrowserRouter>
  

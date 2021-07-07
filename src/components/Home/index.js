@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import SimpleSlider from '../Slider';
 import CardDetails from '../Card'
 import { homeProductsAPI } from '../../Ultis/Apis';
@@ -7,13 +7,39 @@ import { connect } from 'react-redux'
 import { addProduct, getProducts } from '../../actions';
 import Footer from '../Footer';
 import Features from '../Features';
+import Loading from '../Loading';
 
 const Home = (props) => {
+  const [loading, setLoading] = useState(true);
 
+    // useEffect(() => {
+    //   axios(homeProductsAPI).then(res=> props.sendProducts(res.data))
+    // }, []);
+
+    
     useEffect(() => {
-      axios(homeProductsAPI).then(res=> props.sendProducts(res.data))
-    }, []); 
-        
+      async function getUser() {
+        try {
+          const response = await axios.get(homeProductsAPI);
+          const data = response.data
+          console.log(data)
+          props.sendProducts(data)
+          setLoading(false);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      getUser()
+    }, []);
+    
+    if (loading) {
+      return (
+        <main>
+          <Loading />
+        </main>
+      );
+    }
+  
     return ( <>
     <SimpleSlider />
     <Features />
