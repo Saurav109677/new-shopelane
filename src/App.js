@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Topbar from './components/Topbar';
 import Home from './components/Home';
 import ProductDetails from './components/ProductDetails';
@@ -11,7 +11,7 @@ import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Topbar />
     <Switch>
       <Route path="/" exact component={Home} />
@@ -21,7 +21,7 @@ function App() {
       <Route path="/order" component={OrderConform} />
       <Route component={PageNotFound} />
     </Switch>
-    </BrowserRouter>
+    </HashRouter>
  
   );
 }
